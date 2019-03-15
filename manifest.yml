@@ -1,0 +1,5 @@
+name: juanmosqueratest
+path: target/wdvglab-0.0.1.jar
+buildpack: https://github.com/cloudfoundry/java-buildpack.git
+memory: 1G
+#cf push
