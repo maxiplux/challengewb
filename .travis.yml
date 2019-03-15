@@ -1,0 +1,37 @@
+language: java
+sudo: true
+dist: trusty
+jdk: oraclejdk8
+
+services:
+- postgresql
+
+
+
+
+addons:
+
+
+
+  apt:
+    packages:
+    - oracle-java8-installer
+before_install:
+- chmod a+x ./mvnw
+
+#deploy:
+#  provider: heroku
+#  api_key:
+#    secure: $HEROKU_API_KEY
+#  app: apipostgress
+
+script:
+- ./mvnw clean verify install -B
+#- ./mvnv verify -B
+#- ./mvnw  verify
+#- sonar-scanner
+#mvn sonar:sonar   -Dsonar.projectKey=maxiplux_apipostgress   -Dsonar.organization=maxiplux-github   -Dsonar.host.url=https://sonarcloud.io   -Dsonar.login=b7cc5e383086fedd5b328a68e293a7c28d5bce1e
+
+#sudo: required
+#services:
+#- docker
